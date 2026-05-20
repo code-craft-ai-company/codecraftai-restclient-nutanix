@@ -20,15 +20,15 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.apigroups.groupsupport import (
+from automojo.restclient.nutanix.apigroups.groupsupport import (
     iter_list_entities, raise_for_status
 )
-from automojo.interop.nutanix.model.nutanixvm import NutanixVm
-from automojo.interop.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.interop.nutanix.specs.nutanixspecs import VmSpec
+from automojo.restclient.nutanix.model.nutanixvm import NutanixVm
+from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from automojo.restclient.nutanix.specs.nutanixspecs import VmSpec
 
 
 class VmsGroup(RestApiGroup):

@@ -14,12 +14,12 @@ __credits__ = []
 
 import requests_mock
 
-from automojo.interop.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.interop.nutanix.specs.nutanixspecs import (
+from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from automojo.restclient.nutanix.specs.nutanixspecs import (
     ImageSpec, SecurityPolicySpec, SubnetSpec, VmSpec, VolumeGroupSpec, VpcSpec
 )
 
-from automojo.tests.interop.nutanix.testsupport import (
+from automojo.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, entity, fast_aspects, list_page, make_client, write_response
 )
 

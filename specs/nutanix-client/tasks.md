@@ -2,7 +2,7 @@
 
 ## Package Skeleton
 
-- [x] 1. Create `source/packages/automojo/interop/nutanix/` package tree.
+- [x] 1. Create `source/packages/automojo/restclient/nutanix/` package tree.
 - [x] 2. Add `aspectsnutanix.py` with `DEFAULT_NUTANIX_ASPECTS`.
 
 ## Client Core

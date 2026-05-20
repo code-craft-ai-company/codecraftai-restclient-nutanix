@@ -17,13 +17,13 @@ from typing import Any, Dict, List
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.apigroups.groupsupport import iter_list_entities
-from automojo.interop.nutanix.model.nutanixcluster import NutanixCluster
-from automojo.interop.nutanix.model.nutanixhost import NutanixHost
-from automojo.interop.nutanix.model.nutanixstoragecontainer import (
+from automojo.restclient.nutanix.apigroups.groupsupport import iter_list_entities
+from automojo.restclient.nutanix.model.nutanixcluster import NutanixCluster
+from automojo.restclient.nutanix.model.nutanixhost import NutanixHost
+from automojo.restclient.nutanix.model.nutanixstoragecontainer import (
     NutanixStorageContainer
 )
 

@@ -26,7 +26,7 @@ that are well design, cohesive, and easy to use and that provide rapid but stabl
 
 # Project Overview
 
-The `automojo-interop-nutanix` package is the venue-specific REST client
+The `automojo-restclient-nutanix` package is the venue-specific REST client
 for Nutanix Prism Central. Prism Central is the multi-cluster management
 plane above Prism Element (per-cluster), and its v3/v4 REST API is the
 right entry point for venue-level provisioning: cluster and host
@@ -46,10 +46,10 @@ Credentials enter as typed `NutanixPrismCredential` instances from
 `automojo-credentials`.
 
 # Testing Conventions
-The 'automojo-interop-nutanix' package repository utilizes the 'testbase' framework
+The 'automojo-restclient-nutanix' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/automojo/tests/singlehost/interop/nutanix'.
+'source/testroots/automojo/tests/singlehost/restclient/nutanix'.
 
 Property-based tests (hypothesis) are required for paging, URL composition,
 and idempotent retry semantics.

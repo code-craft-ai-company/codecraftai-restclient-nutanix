@@ -19,12 +19,12 @@ import requests_mock
 
 from automojo.errors.exceptions import HttpResponse5xxError, SemanticError
 
-from automojo.interop.nutanix.apigroups.groupsupport import raise_for_status
-from automojo.interop.nutanix.exceptions.nutanixexceptions import (
+from automojo.restclient.nutanix.apigroups.groupsupport import raise_for_status
+from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixAuthenticationError
 )
 
-from automojo.tests.interop.nutanix.testsupport import (
+from automojo.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, fast_aspects, make_client
 )
 

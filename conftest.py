@@ -2,7 +2,7 @@
     .. module:: conftest
         :platform: Darwin, Linux, Unix, Windows
         :synopsis: Pytest configuration that places the ``testbase`` test
-                   root on ``sys.path`` so the Nutanix interop test
+                   root on ``sys.path`` so the Nutanix REST client test
                    packages resolve.
 
     .. moduleauthor:: Myron Walker <myron.walker@gmail.com>

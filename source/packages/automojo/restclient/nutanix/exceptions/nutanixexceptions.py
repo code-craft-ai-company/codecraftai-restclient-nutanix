@@ -2,7 +2,7 @@
     .. module:: nutanixexceptions
         :platform: Darwin, Linux, Unix, Windows
         :synopsis: Module that contains the exception types raised by the
-                   Nutanix Prism Central interop client.
+                   Nutanix Prism Central REST client.
 
     .. moduleauthor:: Myron Walker <myron.walker@gmail.com>
 """

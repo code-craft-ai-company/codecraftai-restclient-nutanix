@@ -2,7 +2,7 @@
 Automation Mojo Interop - Nutanix
 =========================================
 
-The ``automojo-interop-nutanix`` package is the venue-specific REST client for Nutanix
+The ``automojo-restclient-nutanix`` package is the venue-specific REST client for Nutanix
 Prism Central, the multi-cluster management plane above Prism Element. Its v3/v4 REST API
 is the right entry point for venue-level provisioning, and the client wraps the Nutanix
 asynchronous "intent spec → task" model in a typed task handle so the provisioner's verify
@@ -22,8 +22,8 @@ Repository Structure
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/interop/nutanix/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/interop/nutanix/`` - TestBase test roots.
+- ``source/packages/automojo/restclient/nutanix/`` - Package source code.
+- ``source/testroots/testbase/automojo/tests/restclient/nutanix/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

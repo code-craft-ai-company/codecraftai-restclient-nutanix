@@ -16,13 +16,13 @@ from typing import Any, Dict, List, Optional
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.apigroups.groupsupport import iter_list_entities
-from automojo.interop.nutanix.model.nutaniximage import NutanixImage
-from automojo.interop.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.interop.nutanix.specs.nutanixspecs import ImageSpec
+from automojo.restclient.nutanix.apigroups.groupsupport import iter_list_entities
+from automojo.restclient.nutanix.model.nutaniximage import NutanixImage
+from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from automojo.restclient.nutanix.specs.nutanixspecs import ImageSpec
 
 
 class ImagesGroup(RestApiGroup):

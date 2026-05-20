@@ -16,13 +16,13 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.apigroups.groupsupport import (
+from automojo.restclient.nutanix.apigroups.groupsupport import (
     compose_leaf, raise_for_status
 )
-from automojo.interop.nutanix.model.nutanixtaskstatus import NutanixTaskStatus
+from automojo.restclient.nutanix.model.nutanixtaskstatus import NutanixTaskStatus
 
 
 class TasksGroup(RestApiGroup):

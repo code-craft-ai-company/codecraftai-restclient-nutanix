@@ -1,7 +1,7 @@
 """
     .. module:: testsupport
         :platform: Darwin, Linux, Unix, Windows
-        :synopsis: Shared helpers for the Nutanix interop client tests.
+        :synopsis: Shared helpers for the Nutanix REST client tests.
 
     .. moduleauthor:: Myron Walker <myron.walker@gmail.com>
 """
@@ -15,8 +15,8 @@ from typing import Any, Dict, List
 
 from automojo.credentials.nutanixprismcredential import NutanixPrismCredential
 
-from automojo.interop.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.interop.nutanix.nutanixclient import NutanixClient
+from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from automojo.restclient.nutanix.nutanixclient import NutanixClient
 
 
 PRISM_HOST = "prism.example.com"

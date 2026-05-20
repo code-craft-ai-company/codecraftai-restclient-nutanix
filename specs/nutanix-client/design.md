@@ -49,7 +49,7 @@ Exceptions: `NutanixAuthenticationError`, `NutanixTaskFailedError`.
 ## Module Layout
 
 ```
-source/packages/automojo/interop/nutanix/
+source/packages/automojo/restclient/nutanix/
 ├── nutanixclient.py
 ├── aspectsnutanix.py
 ├── apigroups/

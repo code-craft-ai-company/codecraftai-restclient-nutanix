@@ -21,8 +21,8 @@ from requests import Response
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.interop.nutanix.exceptions.nutanixexceptions import (
+from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixAuthenticationError
 )
 

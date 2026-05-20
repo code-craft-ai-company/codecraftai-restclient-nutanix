@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-interop-nutanix"
-description = "Automation Mojo - Nutanix interop client"
+name = "automojo-restclient-nutanix"
+description = "Automation Mojo - Nutanix REST client"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -13,7 +13,9 @@ classifiers = [
 keywords = [
     "python",
     "automation",
-    "automojo"
+    "automojo",
+    "restclient",
+    "nutanix"
 ]
 packages = [{include="automojo", from="source/packages"}]
 

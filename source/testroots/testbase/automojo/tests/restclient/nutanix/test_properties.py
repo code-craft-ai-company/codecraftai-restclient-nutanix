@@ -2,7 +2,7 @@
     .. module:: test_properties
         :platform: Darwin, Linux, Unix, Windows
         :synopsis: Hypothesis property-based tests for the non-trivial
-                   computation in the Nutanix interop client — cursor
+                   computation in the Nutanix REST client — cursor
                    paging and per-segment URL composition.
 
     .. moduleauthor:: Myron Walker <myron.walker@gmail.com>
@@ -23,11 +23,11 @@ from hypothesis import strategies as st
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.interop.nutanix.apigroups.groupsupport import (
+from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from automojo.restclient.nutanix.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_list_entities
 )
-from automojo.interop.nutanix.nutanixclient import NutanixClient
+from automojo.restclient.nutanix.nutanixclient import NutanixClient
 
 
 # ----------------------------------------------------------------------

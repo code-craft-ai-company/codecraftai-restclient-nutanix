@@ -18,12 +18,12 @@ import pytest
 
 from automojo.errors.exceptions import ConfigurationError, SemanticError
 
-from automojo.interop.nutanix.nutanixclient import NutanixClient
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.nutanixclient import NutanixClient
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
 
-from automojo.tests.interop.nutanix.testsupport import (
+from automojo.tests.restclient.nutanix.testsupport import (
     make_client, make_credential
 )
 

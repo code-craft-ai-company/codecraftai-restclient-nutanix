@@ -26,29 +26,29 @@ from automojo.errors.exceptions import ConfigurationError, SemanticError
 
 from automojo.restclient.base.restclientbase import RestClientBase
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.apigroups.groupsupport import (
+from automojo.restclient.nutanix.apigroups.groupsupport import (
     compose_leaf, raise_for_status
 )
-from automojo.interop.nutanix.apigroups.clustersgroup import (
+from automojo.restclient.nutanix.apigroups.clustersgroup import (
     ClustersGroup, HostsGroup
 )
-from automojo.interop.nutanix.apigroups.imagesgroup import ImagesGroup
-from automojo.interop.nutanix.apigroups.networkgroups import (
+from automojo.restclient.nutanix.apigroups.imagesgroup import ImagesGroup
+from automojo.restclient.nutanix.apigroups.networkgroups import (
     SecurityPoliciesGroup, SubnetsGroup, VpcsGroup
 )
-from automojo.interop.nutanix.apigroups.projectsgroup import (
+from automojo.restclient.nutanix.apigroups.projectsgroup import (
     CategoriesGroup, ProjectsGroup
 )
-from automojo.interop.nutanix.apigroups.snapshotsgroup import SnapshotsGroup
-from automojo.interop.nutanix.apigroups.tasksgroup import TasksGroup
-from automojo.interop.nutanix.apigroups.vmsgroup import VmsGroup
-from automojo.interop.nutanix.apigroups.volumegroupsgroup import (
+from automojo.restclient.nutanix.apigroups.snapshotsgroup import SnapshotsGroup
+from automojo.restclient.nutanix.apigroups.tasksgroup import TasksGroup
+from automojo.restclient.nutanix.apigroups.vmsgroup import VmsGroup
+from automojo.restclient.nutanix.apigroups.volumegroupsgroup import (
     VolumeGroupsGroup
 )
-from automojo.interop.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
 
 
 # The Prism Central v3 REST API root.

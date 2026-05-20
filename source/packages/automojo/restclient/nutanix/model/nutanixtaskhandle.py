@@ -24,16 +24,16 @@ from automojo.restclient.base.taskhandle import (
     TaskResult, TaskState, TERMINAL_STATES
 )
 
-from automojo.interop.nutanix.aspectsnutanix import (
+from automojo.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from automojo.interop.nutanix.exceptions.nutanixexceptions import (
+from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixTaskFailedError
 )
 
 
 if TYPE_CHECKING:
-    from automojo.interop.nutanix.nutanixclient import NutanixClient
+    from automojo.restclient.nutanix.nutanixclient import NutanixClient
 
 
 class NutanixTaskHandle:

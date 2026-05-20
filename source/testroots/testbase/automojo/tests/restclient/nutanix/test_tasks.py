@@ -20,16 +20,16 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.taskhandle import TaskState
 
-from automojo.interop.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.interop.nutanix.exceptions.nutanixexceptions import (
+from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixTaskFailedError
 )
-from automojo.interop.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.interop.nutanix.model.nutanixtaskstatus import (
+from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from automojo.restclient.nutanix.model.nutanixtaskstatus import (
     NutanixTaskStatus, prism_state_to_task_state
 )
 
-from automojo.tests.interop.nutanix.testsupport import (
+from automojo.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, fast_aspects, make_client, task_payload
 )
 
