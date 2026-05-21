@@ -36,6 +36,21 @@ class NutanixCategory:
         self.raw: Dict[str, Any] = raw
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`NutanixCategory` to a Prism Central
+            payload.
+
+            The derived ``key`` / ``value`` fields are extracted by
+            :meth:`from_dict` from the raw Prism Central payload, so the
+            canonical round-trippable representation is that raw payload;
+            ``from_dict(to_dict(x))`` re-derives every field identically.
+
+            :returns: The raw Prism Central category payload.
+        """
+        rtnval = self.raw
+        return rtnval
+
     @classmethod
     def from_dict(cls, payload: Dict[str, Any]) -> "NutanixCategory":
         """

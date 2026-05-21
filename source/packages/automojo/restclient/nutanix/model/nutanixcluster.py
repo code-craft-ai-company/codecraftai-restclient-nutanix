@@ -33,6 +33,21 @@ class NutanixCluster:
         self.raw: Dict[str, Any] = raw
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`NutanixCluster` to a Prism Central
+            entity payload.
+
+            The derived fields are extracted by :meth:`from_dict` from the
+            raw Prism Central entity payload, so the canonical
+            round-trippable representation is that raw payload;
+            ``from_dict(to_dict(x))`` re-derives every field identically.
+
+            :returns: The raw Prism Central entity payload.
+        """
+        rtnval = self.raw
+        return rtnval
+
     @classmethod
     def from_dict(cls, payload: Dict[str, Any]) -> "NutanixCluster":
         """
