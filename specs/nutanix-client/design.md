@@ -13,7 +13,7 @@ uuid that must be polled. This client wraps that uniformly in
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  automojo-provisioning / venues / nutanix              │
+│  codecraftai-provisioning / venues / nutanix              │
 └──────────┬─────────────────────────────────────────────┘
            │
            ▼
@@ -49,7 +49,7 @@ Exceptions: `NutanixAuthenticationError`, `NutanixTaskFailedError`.
 ## Module Layout
 
 ```
-source/packages/automojo/restclient/nutanix/
+source/packages/ccai/restclient/nutanix/
 ├── nutanixclient.py
 ├── aspectsnutanix.py
 ├── apigroups/
@@ -62,9 +62,9 @@ source/packages/automojo/restclient/nutanix/
 
 ## See Also
 
-- `automojo-restclient-base/specs/restapigroup-enhancements/`
-- `automojo-provisioning/specs/venue-nutanix/`
-- `automojo-credentials/specs/nutanix-credentials/`
+- `codecraftai-restclient-base/specs/restapigroup-enhancements/`
+- `codecraftai-provisioning/specs/venue-nutanix/`
+- `codecraftai-credentials/specs/nutanix-credentials/`
 
 ---
 

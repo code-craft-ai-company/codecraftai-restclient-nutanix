@@ -8,7 +8,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -16,14 +16,14 @@ import json
 
 import pytest
 
-from automojo.errors.exceptions import ConfigurationError, SemanticError
+from ccai.errors.exceptions import ConfigurationError, SemanticError
 
-from automojo.restclient.nutanix.nutanixclient import NutanixClient
-from automojo.restclient.nutanix.aspectsnutanix import (
+from ccai.restclient.nutanix.nutanixclient import NutanixClient
+from ccai.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
 
-from automojo.tests.restclient.nutanix.testsupport import (
+from ccai.tests.restclient.nutanix.testsupport import (
     make_client, make_credential
 )
 

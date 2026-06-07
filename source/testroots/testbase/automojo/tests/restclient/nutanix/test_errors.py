@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -17,14 +17,14 @@ import pytest
 import requests
 import requests_mock
 
-from automojo.errors.exceptions import HttpResponse5xxError, SemanticError
+from ccai.errors.exceptions import HttpResponse5xxError, SemanticError
 
-from automojo.restclient.nutanix.apigroups.groupsupport import raise_for_status
-from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
+from ccai.restclient.nutanix.apigroups.groupsupport import raise_for_status
+from ccai.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixAuthenticationError
 )
 
-from automojo.tests.restclient.nutanix.testsupport import (
+from ccai.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, fast_aspects, make_client
 )
 
