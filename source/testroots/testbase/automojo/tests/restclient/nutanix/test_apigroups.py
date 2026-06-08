@@ -8,18 +8,18 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 import requests_mock
 
-from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.restclient.nutanix.specs.nutanixspecs import (
+from ccai.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from ccai.restclient.nutanix.specs.nutanixspecs import (
     ImageSpec, SecurityPolicySpec, SubnetSpec, VmSpec, VolumeGroupSpec, VpcSpec
 )
 
-from automojo.tests.restclient.nutanix.testsupport import (
+from ccai.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, entity, fast_aspects, list_page, make_client, write_response
 )
 

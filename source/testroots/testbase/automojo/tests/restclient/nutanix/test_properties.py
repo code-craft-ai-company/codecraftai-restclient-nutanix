@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -21,13 +21,13 @@ import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.restclient.nutanix.apigroups.groupsupport import (
+from ccai.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from ccai.restclient.nutanix.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_list_entities
 )
-from automojo.restclient.nutanix.nutanixclient import NutanixClient
+from ccai.restclient.nutanix.nutanixclient import NutanixClient
 
 
 # ----------------------------------------------------------------------

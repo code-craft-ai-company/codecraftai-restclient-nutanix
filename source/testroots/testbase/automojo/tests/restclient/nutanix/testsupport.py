@@ -7,16 +7,16 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import Any, Dict, List
 
-from automojo.credentials.nutanixprismcredential import NutanixPrismCredential
+from ccai.credentials.nutanixprismcredential import NutanixPrismCredential
 
-from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.restclient.nutanix.nutanixclient import NutanixClient
+from ccai.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from ccai.restclient.nutanix.nutanixclient import NutanixClient
 
 
 PRISM_HOST = "prism.example.com"

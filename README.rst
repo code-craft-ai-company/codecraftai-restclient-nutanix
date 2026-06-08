@@ -1,8 +1,8 @@
 =========================================
-Automation Mojo Interop - Nutanix
+Code Craft AI Interop - Nutanix
 =========================================
 
-The ``automojo-restclient-nutanix`` package is the venue-specific REST client for Nutanix
+The ``codecraftai-restclient-nutanix`` package is the venue-specific REST client for Nutanix
 Prism Central, the multi-cluster management plane above Prism Element. Its v3/v4 REST API
 is the right entry point for venue-level provisioning, and the client wraps the Nutanix
 asynchronous "intent spec → task" model in a typed task handle so the provisioner's verify
@@ -15,15 +15,15 @@ Highlights
 - Networking — VPC/subnet/security-policy management and image catalog.
 - VM lifecycle — create/update/clone/power/delete, disk management, and snapshot management.
 - Projects and categories — project and category (tag) management; intent-spec writes return a task UUID wrapped in a typed ``NutanixTaskHandle``.
-- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_NUTANIX_ASPECTS``; credentials enter as typed ``NutanixPrismCredential`` instances from ``automojo-credentials``.
+- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_NUTANIX_ASPECTS``; credentials enter as typed ``NutanixPrismCredential`` instances from ``codecraftai-credentials``.
 
 Repository Structure
 ====================
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/restclient/nutanix/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/restclient/nutanix/`` - TestBase test roots.
+- ``source/packages/ccai/restclient/nutanix/`` - Package source code.
+- ``source/testroots/testbase/ccai/tests/restclient/nutanix/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

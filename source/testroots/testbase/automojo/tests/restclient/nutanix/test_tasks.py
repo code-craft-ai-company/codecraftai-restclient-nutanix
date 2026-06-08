@@ -9,27 +9,27 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 import pytest
 import requests_mock
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.base.taskhandle import TaskState
+from ccai.restclient.base.taskhandle import TaskState
 
-from automojo.restclient.nutanix.aspectsnutanix import AspectsNutanix
-from automojo.restclient.nutanix.exceptions.nutanixexceptions import (
+from ccai.restclient.nutanix.aspectsnutanix import AspectsNutanix
+from ccai.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixTaskFailedError
 )
-from automojo.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
-from automojo.restclient.nutanix.model.nutanixtaskstatus import (
+from ccai.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
+from ccai.restclient.nutanix.model.nutanixtaskstatus import (
     NutanixTaskStatus, prism_state_to_task_state
 )
 
-from automojo.tests.restclient.nutanix.testsupport import (
+from ccai.tests.restclient.nutanix.testsupport import (
     PRISM_BASE, fast_aspects, make_client, task_payload
 )
 
