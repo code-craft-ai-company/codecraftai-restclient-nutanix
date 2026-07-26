@@ -353,18 +353,27 @@ class NutanixClient(RestClientBase):
         return rtnval
 
     @staticmethod
-    def encode_body(*, body: Optional[Dict[str, Any]]) -> Optional[bytes]:
+    def encode_body(*, body: Optional[Dict[str, Any]]
+                    ) -> Optional[Dict[str, Any]]:
         """
-            Encode a request body dict as UTF-8 JSON bytes.
+            Return a request body ready for :class:`RestClientBase`.
+
+            This deliberately does NOT serialise.  ``RestClientBase`` hands the
+            body to ``requests`` as ``json=body``, which encodes it — so
+            returning JSON bytes here made every write double-encode, and
+            ``requests`` cannot JSON-encode bytes.  Every POST/PUT through this
+            client raised ``TypeError: Object of type bytes is not JSON
+            serializable``.
+
+            The method is kept rather than removed because it is the single
+            place to state that the body must stay a mapping, and its call
+            sites read as the intent-spec assembly they are.
 
             :param body: The body dict, or ``None``.
 
-            :returns: The encoded bytes, or ``None``.
+            :returns: The body dict unchanged, or ``None``.
         """
-        if body is None:
-            rtnval: Optional[bytes] = None
-            return rtnval
-        rtnval = json.dumps(body).encode("utf-8")
+        rtnval = body
         return rtnval
 
     # ------------------------------------------------------------------

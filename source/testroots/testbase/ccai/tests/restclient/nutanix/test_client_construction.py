@@ -229,16 +229,27 @@ def test_json_headers_are_application_json() -> None:
     return
 
 
-def test_encode_body_roundtrips_dict() -> None:
+def test_encode_body_keeps_the_body_a_mapping() -> None:
     """
-        ``encode_body`` produces UTF-8 JSON bytes for a dict body.
+        ``encode_body`` leaves the body as a mapping.
+
+        It must NOT serialise.  RestClientBase hands the body to requests as
+        ``json=body``, which encodes it, so returning JSON bytes here made
+        every write double-encode and fail with "Object of type bytes is not
+        JSON serializable".
+
+        The previous version of this test asserted the bytes, which is how the
+        defect survived: it checked the function in isolation without ever
+        checking that the transport could use what it returned.
 
         :returns: ``None``.
     """
-    encoded = NutanixClient.encode_body(body={"offset": 0, "length": 5})
-    assert isinstance(encoded, bytes)
-    decoded = json.loads(encoded.decode("utf-8"))
-    assert decoded == {"offset": 0, "length": 5}
+    body = {"offset": 0, "length": 5}
+
+    encoded = NutanixClient.encode_body(body=body)
+
+    assert isinstance(encoded, dict)
+    assert encoded == body
     return
 
 
