@@ -18,8 +18,8 @@ from urllib.parse import quote
 
 import pytest
 
-from hypothesis import given, settings
-from hypothesis import strategies as st
+from ccai.testbase.properties import given
+from ccai.testbase.properties import strategies as st
 
 from ccai.errors.exceptions import SemanticError
 
@@ -62,8 +62,8 @@ def _paging_fetcher(*, total: int, page_length: int):
     return _fetch, call_log
 
 
-@settings(max_examples=120, deadline=None)
-@given(total=st.integers(min_value=0, max_value=500),
+@given(
+    constraints={"max_examples": 120},total=st.integers(min_value=0, max_value=500),
        page_length=st.integers(min_value=1, max_value=64))
 def test_paging_collects_every_entity(total, page_length) -> None:
     """
@@ -85,8 +85,8 @@ def test_paging_collects_every_entity(total, page_length) -> None:
     return
 
 
-@settings(max_examples=80, deadline=None)
-@given(total=st.integers(min_value=0, max_value=400),
+@given(
+    constraints={"max_examples": 80},total=st.integers(min_value=0, max_value=400),
        page_length=st.integers(min_value=1, max_value=64))
 def test_paging_uses_bounded_request_count(total, page_length) -> None:
     """
@@ -136,8 +136,7 @@ _SEGMENT_TEXT = st.text(
 )
 
 
-@settings(max_examples=200, deadline=None)
-@given(segment=_SEGMENT_TEXT)
+@given(segment=_SEGMENT_TEXT, constraints={"max_examples": 200})
 def test_encode_segment_matches_quote_safe_empty(segment) -> None:
     """
         ``encode_segment`` equals ``quote(segment, safe='')`` for any input.
@@ -150,8 +149,7 @@ def test_encode_segment_matches_quote_safe_empty(segment) -> None:
     return
 
 
-@settings(max_examples=200, deadline=None)
-@given(segment=_SEGMENT_TEXT)
+@given(segment=_SEGMENT_TEXT, constraints={"max_examples": 200})
 def test_encode_segment_has_no_unescaped_slash(segment) -> None:
     """
         An encoded segment never contains an unescaped path separator.
@@ -165,8 +163,7 @@ def test_encode_segment_has_no_unescaped_slash(segment) -> None:
     return
 
 
-@settings(max_examples=120, deadline=None)
-@given(parts=st.lists(_SEGMENT_TEXT, min_size=0, max_size=5))
+@given(parts=st.lists(_SEGMENT_TEXT, min_size=0, max_size=5), constraints={"max_examples": 120})
 def test_compose_leaf_segment_count_is_preserved(parts) -> None:
     """
         ``compose_leaf`` yields one ``/``-joined segment per input part.
@@ -190,8 +187,8 @@ def test_compose_leaf_segment_count_is_preserved(parts) -> None:
     return
 
 
-@settings(max_examples=120, deadline=None)
-@given(entity=st.text(alphabet=st.characters(min_codepoint=97,
+@given(
+    constraints={"max_examples": 120},entity=st.text(alphabet=st.characters(min_codepoint=97,
                                              max_codepoint=122),
                       min_size=1, max_size=16),
        parts=st.lists(_SEGMENT_TEXT, min_size=0, max_size=4))
@@ -212,8 +209,7 @@ def test_compose_entity_leaf_round_trips_through_client(entity,
     return
 
 
-@settings(max_examples=120, deadline=None)
-@given(parts=st.lists(_SEGMENT_TEXT, min_size=1, max_size=4))
+@given(parts=st.lists(_SEGMENT_TEXT, min_size=1, max_size=4), constraints={"max_examples": 120})
 def test_compose_leaf_rejects_empty_segment(parts) -> None:
     """
         ``compose_leaf`` rejects any list carrying an empty identifier.
