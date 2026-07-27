@@ -13,7 +13,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests_mock
 
 from ccai.errors.exceptions import SemanticError
@@ -46,7 +48,7 @@ def _task_url(*, task_uuid: str) -> str:
     return rtnval
 
 
-@pytest.mark.parametrize("prism,expected", [
+@testbase.parametrize("prism,expected", [
     ("QUEUED", TaskState.PENDING),
     ("PENDING", TaskState.PENDING),
     ("RUNNING", TaskState.RUNNING),
@@ -135,7 +137,7 @@ def test_tasks_get_empty_uuid_raises() -> None:
         :returns: ``None``.
     """
     client = make_client()
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         client.tasks.get(task_uuid="", aspects=fast_aspects())
     return
 
@@ -173,7 +175,7 @@ def test_task_handle_wait_failed_raises() -> None:
                  json=task_payload(uuid="t-1", status="FAILED",
                                    error_detail="boom"))
         handle = NutanixTaskHandle(task_uuid="t-1", client=client)
-        with pytest.raises(NutanixTaskFailedError) as excinfo:
+        with testbase.raises(NutanixTaskFailedError) as excinfo:
             handle.wait(aspects=fast_aspects())
 
     assert "boom" in str(excinfo.value)
@@ -210,7 +212,7 @@ def test_task_handle_wait_times_out() -> None:
         mock.get(_task_url(task_uuid="t-1"),
                  json=task_payload(uuid="t-1", status="RUNNING"))
         handle = NutanixTaskHandle(task_uuid="t-1", client=client)
-        with pytest.raises(TimeoutError):
+        with testbase.raises(TimeoutError):
             handle.wait(aspects=aspects)
     return
 
@@ -224,7 +226,7 @@ def test_task_handle_wait_rejects_nonpositive_interval() -> None:
     client = make_client()
     aspects = AspectsNutanix(completion_interval=0.0, page_length=2)
     handle = NutanixTaskHandle(task_uuid="t-1", client=client)
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         handle.wait(aspects=aspects)
     return
 
@@ -271,7 +273,7 @@ def test_task_handle_cancel_raises_when_inflight() -> None:
     """
     client = make_client()
     handle = NutanixTaskHandle(task_uuid="t-1", client=client)
-    with pytest.raises(NotImplementedError):
+    with testbase.raises(NotImplementedError):
         handle.cancel(aspects=fast_aspects())
     return
 

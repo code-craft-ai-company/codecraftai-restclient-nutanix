@@ -12,9 +12,11 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
+from ccai import testbase
+
+
 import json
 
-import pytest
 
 from ccai.errors.exceptions import ConfigurationError, SemanticError
 
@@ -106,7 +108,7 @@ def test_construction_missing_username_raises() -> None:
     """
     credential = FakeCredential(username="", password="secret",
                                 endpoint="https://prism.example.com")
-    with pytest.raises(ConfigurationError) as excinfo:
+    with testbase.raises(ConfigurationError) as excinfo:
         NutanixClient(credential=credential)
     assert "username" in str(excinfo.value)
     return
@@ -120,7 +122,7 @@ def test_construction_missing_password_raises() -> None:
     """
     credential = FakeCredential(username="admin", password=None,
                                 endpoint="https://prism.example.com")
-    with pytest.raises(ConfigurationError) as excinfo:
+    with testbase.raises(ConfigurationError) as excinfo:
         NutanixClient(credential=credential)
     assert "password" in str(excinfo.value)
     return
@@ -134,7 +136,7 @@ def test_construction_missing_endpoint_raises() -> None:
     """
     credential = FakeCredential(username="admin", password="secret",
                                 endpoint=None)
-    with pytest.raises(ConfigurationError) as excinfo:
+    with testbase.raises(ConfigurationError) as excinfo:
         NutanixClient(credential=credential)
     assert "endpoint" in str(excinfo.value)
     return
@@ -148,7 +150,7 @@ def test_construction_endpoint_without_host_raises() -> None:
     """
     credential = FakeCredential(username="admin", password="secret",
                                 endpoint="https://")
-    with pytest.raises(ConfigurationError):
+    with testbase.raises(ConfigurationError):
         NutanixClient(credential=credential)
     return
 
@@ -187,7 +189,7 @@ def test_api_base_for_empty_entity_raises() -> None:
 
         :returns: ``None``.
     """
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         NutanixClient.api_base_for(entity="")
     return
 

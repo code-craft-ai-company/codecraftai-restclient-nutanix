@@ -13,10 +13,12 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
+from ccai import testbase
+
+
 from typing import Any, Dict, List
 from urllib.parse import quote
 
-import pytest
 
 from ccai.testbase.properties import given
 from ccai.testbase.properties import strategies as st
@@ -121,7 +123,7 @@ def test_paging_rejects_nonpositive_page_length() -> None:
     aspects.page_length = 0
     object.__setattr__(aspects, "__frozen__", True)
 
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         iter_list_entities(fetch_page=fetch, aspects=aspects)
     return
 
@@ -220,6 +222,6 @@ def test_compose_leaf_rejects_empty_segment(parts) -> None:
     """
     poisoned = list(parts)
     poisoned.append("")
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         compose_leaf(base="/api/nutanix/v3/vms", parts=poisoned)
     return

@@ -13,7 +13,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests
 import requests_mock
 
@@ -61,7 +63,7 @@ def test_raise_for_status_401_is_auth_error() -> None:
 
         :returns: ``None``.
     """
-    with pytest.raises(NutanixAuthenticationError):
+    with testbase.raises(NutanixAuthenticationError):
         raise_for_status(response=_response(status_code=401, text="denied"),
                          action="probe")
     return
@@ -73,7 +75,7 @@ def test_raise_for_status_403_is_auth_error() -> None:
 
         :returns: ``None``.
     """
-    with pytest.raises(NutanixAuthenticationError):
+    with testbase.raises(NutanixAuthenticationError):
         raise_for_status(response=_response(status_code=403, text="nope"),
                          action="probe")
     return
@@ -85,7 +87,7 @@ def test_raise_for_status_500_is_semantic_error() -> None:
 
         :returns: ``None``.
     """
-    with pytest.raises(SemanticError) as excinfo:
+    with testbase.raises(SemanticError) as excinfo:
         raise_for_status(response=_response(status_code=500, text="ise"),
                          action="list vms")
     assert "list vms" in str(excinfo.value)
@@ -102,7 +104,7 @@ def test_post_intent_401_reclassified_via_client() -> None:
     with requests_mock.Mocker() as mock:
         mock.post("{}/vms".format(PRISM_BASE), status_code=401,
                   text="invalid credential")
-        with pytest.raises(NutanixAuthenticationError):
+        with testbase.raises(NutanixAuthenticationError):
             client.post_intent(entity="vms", payload={"spec": {}},
                                action="create vm", aspects=fast_aspects())
     return
@@ -118,7 +120,7 @@ def test_post_list_403_reclassified_via_client() -> None:
     with requests_mock.Mocker() as mock:
         mock.post("{}/vms/list".format(PRISM_BASE), status_code=403,
                   text="forbidden")
-        with pytest.raises(NutanixAuthenticationError):
+        with testbase.raises(NutanixAuthenticationError):
             client.vms.list(aspects=fast_aspects())
     return
 
@@ -137,7 +139,7 @@ def test_get_entity_500_surfaces_http_error() -> None:
     with requests_mock.Mocker() as mock:
         mock.get("{}/vms/vm-1".format(PRISM_BASE), status_code=500,
                  text="server error")
-        with pytest.raises(HttpResponse5xxError):
+        with testbase.raises(HttpResponse5xxError):
             client.get_entity(entity="vms", entity_uuid="vm-1",
                               action="get vm", aspects=fast_aspects())
     return
@@ -153,7 +155,7 @@ def test_write_response_without_task_uuid_raises() -> None:
     with requests_mock.Mocker() as mock:
         mock.post("{}/vms".format(PRISM_BASE), status_code=202,
                   json={"status": {}, "metadata": {}})
-        with pytest.raises(SemanticError) as excinfo:
+        with testbase.raises(SemanticError) as excinfo:
             client.post_intent(entity="vms", payload={"spec": {}},
                                action="create vm", aspects=fast_aspects())
     assert "task uuid" in str(excinfo.value)
