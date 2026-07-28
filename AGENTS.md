@@ -49,7 +49,7 @@ Credentials enter as typed `NutanixPrismCredential` instances from
 The 'codecraftai-restclient-nutanix' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/ccai/tests/singlehost/restclient/nutanix'.
+'source/testroots/testbase/ccai/tests/restclient/nutanix'.
 
 Property-based tests (`ccai.testbase.properties`, NOT hypothesis) are required for paging, URL composition,
 and idempotent retry semantics.
