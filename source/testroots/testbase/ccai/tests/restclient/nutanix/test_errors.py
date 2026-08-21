@@ -26,7 +26,7 @@ from ccai.restclient.nutanix.exceptions.nutanixexceptions import (
     NutanixAuthenticationError
 )
 
-from ccai.tests.restclient.nutanix.testsupport import (
+from .testsupport import (
     PRISM_BASE, fast_aspects, make_client
 )
 

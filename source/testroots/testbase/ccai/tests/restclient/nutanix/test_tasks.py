@@ -31,7 +31,7 @@ from ccai.restclient.nutanix.model.nutanixtaskstatus import (
     NutanixTaskStatus, prism_state_to_task_state
 )
 
-from ccai.tests.restclient.nutanix.testsupport import (
+from .testsupport import (
     PRISM_BASE, fast_aspects, make_client, task_payload
 )
 

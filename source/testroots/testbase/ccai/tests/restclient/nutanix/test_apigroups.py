@@ -19,7 +19,7 @@ from ccai.restclient.nutanix.specs.nutanixspecs import (
     ImageSpec, SecurityPolicySpec, SubnetSpec, VmSpec, VolumeGroupSpec, VpcSpec
 )
 
-from ccai.tests.restclient.nutanix.testsupport import (
+from .testsupport import (
     PRISM_BASE, entity, fast_aspects, list_page, make_client, write_response
 )
 

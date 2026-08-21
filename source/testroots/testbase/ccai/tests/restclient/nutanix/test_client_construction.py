@@ -25,7 +25,7 @@ from ccai.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
 
-from ccai.tests.restclient.nutanix.testsupport import (
+from .testsupport import (
     make_client, make_credential
 )
 
