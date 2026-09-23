@@ -23,9 +23,7 @@ from ccai.restclient.base.restapigroup import RestApiGroup
 from ccai.restclient.nutanix.aspectsnutanix import (
     AspectsNutanix, DEFAULT_NUTANIX_ASPECTS
 )
-from ccai.restclient.nutanix.apigroups.groupsupport import (
-    iter_list_entities, raise_for_status
-)
+from ccai.restclient.nutanix.apigroups.groupsupport import iter_list_entities
 from ccai.restclient.nutanix.model.nutanixvm import NutanixVm
 from ccai.restclient.nutanix.model.nutanixtaskhandle import NutanixTaskHandle
 from ccai.restclient.nutanix.specs.nutanixspecs import VmSpec

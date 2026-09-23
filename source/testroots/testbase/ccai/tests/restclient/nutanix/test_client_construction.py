@@ -15,9 +15,6 @@ __credits__ = []
 from ccai import testbase
 
 
-import json
-
-
 from ccai.errors.exceptions import ConfigurationError, SemanticError
 
 from ccai.restclient.nutanix.nutanixclient import NutanixClient
