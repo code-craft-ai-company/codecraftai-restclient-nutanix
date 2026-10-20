@@ -1,6 +1,6 @@
 [project]
 name = "codecraftai-restclient-nutanix"
-version = "1.2.0"
+version = "1.2.1"
 description = "Code Craft AI - Nutanix REST client"
 readme = "README.rst"
 license = "LicenseRef-CodeCraftAI-Source-Available"
